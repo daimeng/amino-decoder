@@ -1,7 +1,7 @@
 BINARY            = amino-decoder
 GITHUB_USERNAME   = daimeng
 DOCKER_REPO       = rmdec
-VERSION           = v1.0.0
+VERSION           = v1.1.0
 GOARCH            = amd64
 ARTIFACT_DIR      = build
 PORT              = 3000
@@ -58,6 +58,7 @@ docker-push:
 	docker push ${DOCKER_IMAGE}:latest
 
 # Run the docker image as a server exposing the service port, mounting configuration from this repo
+# docker run -p ${PORT}:${PORT} -v ${BINARY}.yaml:/root/.${BINARY}.yaml -it ${DOCKER_IMAGE}:${DOCKER_TAG} ${BINARY} start
 docker-run:
 	docker run -p ${PORT}:${PORT} -v ${BINARY}.yaml:/root/.${BINARY}.yaml -it ${DOCKER_IMAGE}:${DOCKER_TAG} ${BINARY} start
 
