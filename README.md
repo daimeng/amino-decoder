@@ -27,8 +27,5 @@ $ make
 
 ## Use docker
 ```
-$ docker pull quay.io/terra_project/amino-decoder
-
-# it will execute rest server
-$ make dockder-run
+# docker run --rm -p 6969:3000 -it rmdec/amino-decoder:v1.0.0 amino-decoder start
 ```

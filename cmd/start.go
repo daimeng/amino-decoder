@@ -2,11 +2,12 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/viper"
-	"github.com/terra-project/amino-decoder/api"
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/spf13/viper"
+	"github.com/terra-project/amino-decoder/api"
 
 	"github.com/gorilla/handlers"
 	"github.com/spf13/cobra"
@@ -20,14 +21,13 @@ var (
 	server *api.Server
 )
 
-
 // serveCmd represents the serve command
 var serveCmd = &cobra.Command{
 	Use:   "start",
 	Short: "Runs the server",
 	Run: func(cmd *cobra.Command, args []string) {
 
-		log.Println(fmt.Sprintf("Listening on port ':%v'...", server.Port))
+		log.Println(fmt.Sprintf("Listening on port :%v... [or whatever you remapped to for docker]", server.Port))
 		log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", server.Port), handlers.LoggingHandler(os.Stdout, server.Router())))
 	},
 }

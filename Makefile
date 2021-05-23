@@ -1,6 +1,6 @@
 BINARY            = amino-decoder
-GITHUB_USERNAME   = terra-project
-DOCKER_REPO       = quay.io/terra_project
+GITHUB_USERNAME   = daimeng
+DOCKER_REPO       = rmdec
 VERSION           = v1.0.0
 GOARCH            = amd64
 ARTIFACT_DIR      = build

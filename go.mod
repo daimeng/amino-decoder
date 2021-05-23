@@ -1,6 +1,6 @@
 module github.com/terra-project/amino-decoder
 
-go 1.13
+go 1.15
 
 require (
 	github.com/cosmos/cosmos-sdk v0.39.3
