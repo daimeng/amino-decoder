@@ -39,7 +39,7 @@ func init() {
 
 // Server represents the API server
 type Server struct {
-	Port      int    `json:"port"`
+	Port int `json:"port"`
 
 	Version string `yaml:"version,omitempty"`
 	Commit  string `yaml:"commit,omitempty"`
@@ -52,6 +52,7 @@ func (s *Server) Router() *mux.Router {
 
 	router.HandleFunc("/version", s.VersionHandler).Methods("GET")
 	router.HandleFunc("/decode/tx", s.DecodeTxHandler).Methods("POST")
+	router.HandleFunc("/decode/batch", s.BatchDecodeTxHandler).Methods("POST")
 
 	return router
 }
